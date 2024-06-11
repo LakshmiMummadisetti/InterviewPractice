@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "suite1" preserve-order="false" thread-count="2" parallel="tests">
+<test name = "Regression">
+    <packages>
+        <package name = "SeleniumTests">
+        <package name = "Seleniumint">
+        </package>
+    </packages>
+</test>
+<test name = "smoketest">
+    <classes>
+        <class name = "class1"/>
+        <class name = "class2"/>
+        <class name = "class3"/>
+    </classes>
+<test name = "test3">
+    <groups>
+        <run>
+            <include name="brokentest"/> //method name
+            <exclude name="testesclude"/>
+        </run>
+    </groups>
+    <classes>
+        <class name = "class4"/>
+        <class name = "class5"/>
+        <class name = "class6"/>
+        <methods>
+            <include name="testmethod1"/>
+            <include name = "testmethod2"/>
+        </methods>
+    </classes>
+</test>
+</suite>
