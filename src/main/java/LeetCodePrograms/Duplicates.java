@@ -3,7 +3,7 @@ package LeetCodePrograms;
 public class Duplicates {
     public static void main(String args[])
     {
-        int num[] = {1,2,3,4,5,6};
+        int num[] = {1,2,6,3,4,5,6};
 CheckDuplicates obj = new CheckDuplicates();
 System.out.println(obj.duplicateValues(num));
         }

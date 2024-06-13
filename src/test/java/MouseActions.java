@@ -19,7 +19,7 @@ public class MouseActions {
         WebElement rightClickButton = driver.findElement(By.xpath("//span[text()='right click me']"));
         Actions ac = new Actions(driver);
         ac.contextClick(rightClickButton).perform();
-        ac.sendKeys(Keys.SPACE).perform();
+        ac.sendKeys(Keys.SPACE).build().perform();
         driver.findElement(By.xpath("//span[text()='Edit']")).click();
         driver.switchTo().alert().accept();
     }

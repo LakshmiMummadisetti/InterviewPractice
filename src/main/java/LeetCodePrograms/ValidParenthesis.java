@@ -1,33 +1,44 @@
 package LeetCodePrograms;
 
+import java.util.Stack;
+
 import static io.opentelemetry.api.trace.TraceId.isValid;
 
 public class ValidParenthesis {
 
-        public static void main(String[] args) {
-            String s = "{[()]}";
-            int mid = s.length()/2;
- First obj = new First();
- System.out.println(obj.sum(s,mid));
+    public static void main(String[] args) {
+        String str = "[{()()}]";
+        System.out.println(isParenthesisValid(str));
 
+    }
+
+    public static boolean isParenthesisValid(String str) {
+        if (str.length() % 2 != 0) {
+            return false;
         }
-}
+        Stack<Character> stack = new Stack<>();
+        for (char c : str.toCharArray()) {
+            if (c == '[' || c == '{' || c == '(') {
+                stack.push(c);
+            } else if (c == ']' || c == '}' || c == ')') {
+                if (stack.isEmpty() ) {
+                    return false;
+                } else if(!isThismatching(c, stack.pop()))
+                   return false;
 
-class First
-{
-    public boolean sum(String s, int mid)
-    {
-        for(int i= 0, j =s.length()-1;i<mid; i++, j--)
-        {
-            System.out.println(s.charAt(i) + ":" + s.charAt(j));
-
-            if(Character.compare(s.charAt(i),s.charAt(j))==0)
-            {
-
-                return false;
+            }
             }
 
-        }
-        return true;
+        return stack.isEmpty();
+    }
+
+
+    public static boolean isThismatching(char close, char open) {
+        if (open == '{' && close == '}' || open == '[' && close == ']' || open == '(' && close == ')')
+            return true;
+        else
+            return false;
+
     }
 }
+

@@ -10,10 +10,12 @@ public class ReverseStringSpacesInPlace {
     {
         String str = "ServiceNow is hiring for the QA roles";
 
+        char ch[] = str.toCharArray();
         // Find the indices of all spaces
         List<Integer> indicesOfSpaces = new ArrayList<>();
-        for (int index = str.indexOf(' '); index >= 0; index = str.indexOf(' ', index + 1)) {
-            indicesOfSpaces.add(index);
+        for (int i =0;i<ch.length-1;i++) {
+       if(ch[i]==' ')
+            indicesOfSpaces.add(i);
         }
         System.out.println("The indices of all spaces are: " + indicesOfSpaces);
         String removespaces = str.replaceAll(" ","");
