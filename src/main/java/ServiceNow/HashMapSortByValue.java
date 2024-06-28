@@ -15,7 +15,7 @@ public class HashMapSortByValue {
         map.put("mom", 12);
 
         List<Integer> li = new ArrayList<>(map.values());
-        li.toArray();
+       // li.toArray();
         Collections.sort(li);
 
         System.out.println(li);
