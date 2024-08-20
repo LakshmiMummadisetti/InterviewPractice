@@ -1,19 +1,30 @@
 package forloopprograms;
 
+import java.util.Arrays;
+
 public class starprogram {
     public static void main(String args[])
     {
-
-        for(int i=1;i<=4;i++)
+      System.out.println(Arrays.toString(solution(7)));
+    }
+    public static int[] solution(int num)
+    {
+        int first =0;
+        int second =1;
+        int third;
+        int num1[] = new int[22];
+        num1[0]= first;
+        num1[1] =second;
+        for(int i =1;i<=num;i++)
         {
+            third=first+second;
+            num1[i]=third;
 
-            for(int j=1;j<=i;j++)
-            {
+            first=second;
+            second=third;
 
-                System.out.print("*");
 
-            }
-            System.out.println("*");
         }
+        return num1;
     }
 }
